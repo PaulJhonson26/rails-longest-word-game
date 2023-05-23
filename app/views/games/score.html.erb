@@ -1,3 +1,4 @@
+<% time_end = DateTime.now %>
 <h1>Answer: <%=params[:answer]%></h1>
 <%random = params[:letters].gsub(" ", "").chars()%>
 <table>
@@ -18,7 +19,8 @@
 <% elsif @uses_letters == false%>
   <h3>Sorry, but <%=params[:answer]%> can't be built out of <%= params[:letters].gsub(" ", ", ") %></h3>
 <% else %>
-  <h3> Sorry, but <%=params[:answer]%> isn't an english word </h3>
+  <h3> Sorry, but "<%=params[:answer]%>" isn't an english word </h3>
 <% end %>
 
+<h2>Score: <%= 2**(params[:answer].length+2).to_f - ((time_end - Date.parse(params[:time_start])).to_f * 60).round(2) %> </h2>
 <%= link_to "Play again", new_path %>

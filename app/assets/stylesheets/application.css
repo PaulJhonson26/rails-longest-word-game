@@ -31,3 +31,16 @@
 body {
   font-family: Arial;
 }
+
+#input {
+  width: 500px;
+  padding:20px;
+  font-size: 30px;
+  margin: 10px;
+}
+
+#submit {
+  background-color: cornflowerblue;
+  padding: 10px;
+  border-radius: 5px;
+}

@@ -2,9 +2,11 @@ require 'open-uri'
 require 'json'
 class GamesController < ApplicationController
   def new
+    @time_start = DateTime.now
   end
 
   def score
+
     answer = params[:answer].upcase
     letters = params[:letters].gsub(" ", "").chars()
     url = "https://wagon-dictionary.herokuapp.com/#{params[:answer]}"
